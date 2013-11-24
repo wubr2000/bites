@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  restaurant: MyString
+  body: MyText
+  published_on: 2013-11-22
+
+two:
+  restaurant: MyString
+  body: MyText
+  published_on: 2013-11-22

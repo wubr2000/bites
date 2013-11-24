@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: bites_dev
+  pool: 5
+  username: rails
+  password: phantom
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: bites_test
+  pool: 5
+  username: rails
+  password: phantom
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: bites_production
+  pool: 5
+  username: rails
+  password: phantom
