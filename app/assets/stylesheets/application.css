@@ -1,13 +1,57 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
+ *= require bootstrap
  */
+
+body {
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 400;
+  color: #555;
+}
+
+.bubble 
+{
+  position: relative;
+  width: auto;
+  height: auto;
+  padding: 0 10px 10px 10px;
+  background: #00FFFF;
+  margin-right: 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.bubble:after 
+{
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 0 15px 15px;
+  border-color: #00FFFF transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  top: -15px;
+  left: 28px;
+}
+
+
+.reviewer-box {
+  margin-top:40px;
+  margin-bottom: 30px
+}
+
+.avatar {
+  background-color: #c92424;
+  border-radius: 150px;
+  display: inline-block;
+  vertical-align: middle;
+/*  text-align: center;
+  font-family: arial, helvetica, sans-serif;
+  color: #fff;
+  text-transform: uppercase;*/
+  width: 30px;
+  height: 30px;
+  font-size: 14px
+}
+

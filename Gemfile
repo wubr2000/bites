@@ -12,4 +12,3 @@ gem 'puma'
 gem 'rabl'
 gem 'oj'
 gem 'gon'
-

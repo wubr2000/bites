@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bites</title>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= stylesheet_link_tag "simple-sidebar.css", media: "all" %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+  <div id="wrapper">
+      
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand"><a href="#">Home</a></li>
+          <li><a href="#"><i class="fa fa-heart"></i>&nbsp;&nbsp;Following</a></li>
+          <li><a href="#"><i class="fa fa-users"></i>&nbsp;&nbsp;Followers</a></li>
+          <li><a href="#"><i class="fa fa-star"></i>&nbsp;&nbsp;Ratings  </a></li>
+          <li><a href="#"><i class="fa fa-hand-o-up"></i>&nbsp;&nbsp;&nbsp;Trending</a></li>
+          <li><a href="#"><i class="fa fa-cutlery"></i>&nbsp;&nbsp;Cuisine Type</a></li>
+          <li><a href="#"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;&nbsp;Neigbhorhood</a></li>
+        </ul>
+      </div>
+
+      <!-- Page content -->
+      <div id="page-content-wrapper">
+        <div class="content-header">
+          <h1>
+            <a id="menu-toggle" href="#" ><i class="fa fa-bars"></i></a>
+            Bites
+          </h1>
+        </div>
+
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="page-content inset">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="well" id = "create_review_form">
+                <form>
+                  <label for="new_restaurant_name">Start A Review</label>
+                  <input id="new_restaurant_name" type="text">
+                </form>
+                <button id="new_review_submit"></button>
+              </div>
+            </div>
+          </div>
+            
+          <div class="row">  
+            <section class="col-md-12" id="content"></section>
+          </div>  
+                
+
+        </div>
+      </div>
+      
+    </div>
+
+
+<!-- JavaScripts -->
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/bootstrap.js"></script>
+<!-- Custom JavaScript for the Menu Toggle -->
+<script>
+  $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("active");
+  });
+</script>
+
+</body>
+
+</html>
+

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131122085726) do
+ActiveRecord::Schema.define(version: 20131124014009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 20131122085726) do
   end
 
   add_index "comments", ["review_id"], name: "index_comments_on_review_id", using: :btree
+
+  create_table "relationships", id: false, force: true do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
 
   create_table "reviews", force: true do |t|
     t.string   "restaurant"
@@ -54,6 +63,8 @@ ActiveRecord::Schema.define(version: 20131122085726) do
 
   create_table "users", force: true do |t|
     t.string   "name"
+    t.text     "credential"
+    t.text     "avatar_href"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
