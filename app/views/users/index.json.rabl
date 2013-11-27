@@ -8,6 +8,14 @@ child @users, object_root: false do
     user_url(user)
   end
 
+  node :avatar_href do |user|
+    user.avatar_href
+  end
+
+  node :credential do |user|
+    user.credential
+  end
+
   node :reviews do |user|
     #user_reviews_url(user)
     user.reviews
@@ -20,6 +28,9 @@ child @users, object_root: false do
   node :followers do |user|
     user.followers
   end
+
+  node(:followers_count) { |user| user.followers.count }
+  node(:followed_users_count) { |user| user.followed_users.count }
 
   # node :links do |user|
   #   {

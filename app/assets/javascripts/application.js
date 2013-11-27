@@ -3,3 +3,5 @@
 //= require handlebars
 //= require templates
 //= require index
+//= require leaflet
+//= require map

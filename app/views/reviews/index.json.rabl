@@ -8,9 +8,9 @@ child @reviews, object_root: false do
     user_review_url(@user, review)
   end
 
-  # node :user do |review|
-  #   user_url(@user)
-  # end
+  
+
+
 end
 
 # node :links do |review|

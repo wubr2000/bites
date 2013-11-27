@@ -17,9 +17,8 @@
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-          <li class="sidebar-brand"><a href="#">Home</a></li>
-          <li><a href="#"><i class="fa fa-heart"></i>&nbsp;&nbsp;Following</a></li>
-          <li><a href="#"><i class="fa fa-users"></i>&nbsp;&nbsp;Followers</a></li>
+          <li class="sidebar-brand"><a href="/">Home</a></li>
+          <li><a href="#"><i class="fa fa-user"></i>&nbsp;&nbsp;My Bites</a></li>
           <li><a href="#"><i class="fa fa-star"></i>&nbsp;&nbsp;Ratings  </a></li>
           <li><a href="#"><i class="fa fa-hand-o-up"></i>&nbsp;&nbsp;&nbsp;Trending</a></li>
           <li><a href="#"><i class="fa fa-cutlery"></i>&nbsp;&nbsp;Cuisine Type</a></li>
@@ -31,7 +30,7 @@
       <div id="page-content-wrapper">
         <div class="content-header">
           <h1>
-            <a id="menu-toggle" href="#" ><i class="fa fa-bars"></i></a>
+            <a id="menu-toggle" href="#"><i class="fa fa-bars"></i></a>
             Bites
           </h1>
         </div>
@@ -40,7 +39,7 @@
         <div class="page-content inset">
           <div class="row">
             <div class="col-md-12">
-              <div class="well" id = "create_review_form">
+              <div class="well blockquote" id = "create_review_form">
                 <form>
                   <label for="new_restaurant_name">Start A Review</label>
                   <input id="new_restaurant_name" type="text">
@@ -66,10 +65,12 @@
 <script src="js/bootstrap.js"></script>
 <!-- Custom JavaScript for the Menu Toggle -->
 <script>
+
   $("#menu-toggle").click(function(e) {
       e.preventDefault();
       $("#wrapper").toggleClass("active");
   });
+
 </script>
 
 </body>

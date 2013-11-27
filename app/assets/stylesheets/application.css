@@ -1,6 +1,13 @@
 /*
  *= require bootstrap
+ *= require leaflet
  */
+
+
+ #map {
+  height: 400px;
+  width: 800px;
+ }
 
 body {
   font-family: 'Open Sans',sans-serif;
@@ -8,6 +15,11 @@ body {
   color: #555;
 }
 
+.content-font {
+  color: #555
+}
+
+/*Quote bubble*/
 .bubble 
 {
   position: relative;
@@ -16,6 +28,7 @@ body {
   padding: 0 10px 10px 10px;
   background: #00FFFF;
   margin-right: 20px;
+  margin-left: 20px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -41,17 +54,31 @@ body {
   margin-bottom: 30px
 }
 
-.avatar {
+/*Avatar circle*/
+.avatar-regular {
   background-color: #c92424;
   border-radius: 150px;
   display: inline-block;
   vertical-align: middle;
-/*  text-align: center;
-  font-family: arial, helvetica, sans-serif;
-  color: #fff;
-  text-transform: uppercase;*/
+  width: 100px;
+  height: 100px;
+  font-size: 14px
+}
+
+.avatar-small {
+  background-color: #c92424;
+  border-radius: 150px;
+  display: inline-block;
+  vertical-align: middle;
   width: 30px;
   height: 30px;
   font-size: 14px
+}
+
+#followers-box, #followed-users-box {
+  position: relative;
+  height: auto;
+  width: auto;
+  margin-left: 20px;
 }
 

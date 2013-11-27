@@ -9,17 +9,29 @@ $ ->
 #MAIN REVIEWS PAGE
   showPage '/api/reviews', bites.reviewsTemplate
 
-#CLICK TO GO TO INDIVIDUAL USERS
-  $('section').on 'click', 'ul li', (e) ->
+#CLICK TO GO TO AN INDIVIDUAL USER PAGE
+  $('section').on 'click', 'ul span', (e) ->
+    e.preventDefault()
     id = $(@).data('id')
     showPage "/api/users/#{id}", bites.userTemplate
+  
+#TOGGLE FOLLOWERS AND FOLLOWING BOXES
+  $(".page-content").on "click", "#followers", (e) ->
+    e.preventDefault()
+    $("#followers-box").toggle "show"
 
-#BACK TO USERS LINK
-  $('section').on 'click', '#back-to-users', (e) ->
-    showPage '/api/users', bites.usersTemplate
+  $(".page-content").on "click", "#followed_users", (e) ->
+    e.preventDefault()
+    $("#followed-users-box").toggle "show"
+
+#HOME LINK
+  # $('a[href*="HOME"]').on 'click', (e) ->
+  #   console.log("home button")
+  #   showPage '/api/reviews', bites.reviewsTemplate
 
 #NEW REVIEW SUBMIT FUNCTION
   $('#new_review_submit').on 'click', (e) ->
+    e.preventDefault()
     title = $('#new_restaurant_name').val()
     id = $(@).data('id')
 
