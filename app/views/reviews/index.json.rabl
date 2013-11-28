@@ -1,6 +1,6 @@
 object false
 
-child @reviews, object_root: false do
+child @reviews.reverse, object_root: false do
 
   attributes :id, :restaurant, :body, :published_on, :user
 

@@ -21,7 +21,8 @@
               <a data-id=\"{{id}}\" class=\"content-font\">{{restaurant}}</a>
               <br>Bites:
               <a data-id=\"{{id}}\" class=\"content-font\">{{body}}</a>
-              <p>
+              <p><br>
+              <button id=\"delete_button\" data-id=\"{{id}}\" class=\"btn btn-sm btn-warning\">Delete</button>
           </div>
         </div>
         <p>
@@ -44,13 +45,21 @@
           </span>
 
           <span data-id=\"{{id}}\" align=\"center\">
-            <h5><a id=\"followers\" href=\"#\"><i class=\"fa fa-users\"></i></a>
-              Followers: {{followers_count}}
-            </h5>
-            <h5><a id=\"followed_users\" href=\"#\"><i class=\"fa fa-heart\"></i></a>
-              Following: {{followed_users_count}}
-            </h5>
+            <h5>
+              <a id=\"followers\" href=\"#\"><i class=\"fa fa-pencil\"></i></a>
+                Reviews: {{reviews_count}}
+              &nbsp;|&nbsp;
+              <a id=\"followers\" href=\"#\"><i class=\"fa fa-users\"></i></a>
+                Followers: {{followers_count}}
+              &nbsp;|&nbsp;
+              <a id=\"followed_users\" href=\"#\"><i class=\"fa fa-heart\"></i></a>
+                Following: {{followed_users_count}}
+            </h5><br>
           </span>
+
+          <div align=\"center\">
+            <button id=\"follow_button\" data-id=\"{{id}}\" class=\"btn btn-lg btn-primary\">Follow Me</button>
+          </div>
 
           <div id='followers-box'>
             {{#each followers}}

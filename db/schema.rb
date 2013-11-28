@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20131124014009) do
 
   add_index "comments", ["review_id"], name: "index_comments_on_review_id", using: :btree
 
-  create_table "relationships", id: false, force: true do |t|
+  create_table "relationships", force: true do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
     t.datetime "created_at"

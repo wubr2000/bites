@@ -17,6 +17,11 @@ Bites::Application.routes.draw do
         get ':id' => 'reviews#index', on: :collection
     end
 
+    resources :relationships, except: [ :show, :new, :edit ],
+      defaults: { format: :json } do
+        get ':id' => 'relationships#index', on: :collection
+    end    
+
   end
   
   root 'site#index'

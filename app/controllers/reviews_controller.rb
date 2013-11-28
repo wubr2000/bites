@@ -16,8 +16,11 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    review = @user.reviews.new(review_params)
+    review = if @user
+      @user.reviews.new(review_params)
+    else
+      Review.new(review_params)
+    end
 
     if review.save
       head :created
@@ -27,9 +30,11 @@ class ReviewsController < ApplicationController
   end
   
   def update
+    head @review.update(review_params) ? :no_content : :unprocessable_entity
   end
   
   def destroy
+    head @article.destroy ? :no_content : :unprocessable_entity
   end
 
   private
@@ -51,7 +56,8 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(
       :restaurant,
-      :body
+      :body,
+      :published_on
     )
   end
 

@@ -33,17 +33,51 @@ $ ->
   $('#new_review_submit').on 'click', (e) ->
     e.preventDefault()
     title = $('#new_restaurant_name').val()
+    review = $('#new_review').val()
+    time = Date()
     id = $(@).data('id')
 
     if (title=="") 
       console.log("title is empty");
     else
-      $.ajax '/api/users/1/reviews', 
+      $.ajax '/api/users/9/reviews.json', 
         type: 'POST',
-        contentType: 'application/json',
-        data: JSON.stringify({ "review": { "restaurant": title, "body": "Give me some chili!" }}),
+        dataType: 'text',
+        data: { "review": { 
+          "restaurant": title, 
+          "body": review,
+          "published_on": time }},
         success: (data) ->
-          console.log(data) 
+          showPage '/api/reviews', bites.reviewsTemplate
+
+#REVIEW DELETE FUNCTION
+
+  $(".page-content").on "click", "#delete_button", (e) ->
+    e.preventDefault()
+    id = $(@).data('id')
+    console.log(id)
+
+    $.ajax '/api/reviews/'+id, 
+      type: 'DELETE',
+      dataType: 'text',
+      success: (data) ->
+        showPage '/api/reviews', bites.reviewsTemplate
+
+#REVIEW FOLLOW FUNCTION
+  $(".page-content").on "click", "#follow_button", (e) ->
+    e.preventDefault()
+    id = $(@).data('id')
+    console.log(id)
+
+    $.ajax '/api/relationships/', 
+      type: 'POST',
+      dataType: 'text',
+      data: { "relationships": { 
+          "follower_id": 8, 
+          "followed_id": id }},
+      success: (data) ->
+        #showPage '/api/users/'+id, bites.usersTemplate
+
 
   # $.ajax '/api/users', 
   #   type: 'GET',

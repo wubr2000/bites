@@ -31,6 +31,7 @@ child @users, object_root: false do
 
   node(:followers_count) { |user| user.followers.count }
   node(:followed_users_count) { |user| user.followed_users.count }
+  node(:reviews_count) { |user| user.reviews.count }
 
   # node :links do |user|
   #   {

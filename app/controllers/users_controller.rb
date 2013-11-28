@@ -49,7 +49,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(
-      :name
+      :name,
+      :credential,
+      :avatar_href
     )
   end
 
