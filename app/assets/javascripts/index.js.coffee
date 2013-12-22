@@ -40,7 +40,7 @@ $ ->
     if (title=="") 
       console.log("title is empty");
     else
-      $.ajax '/api/users/9/reviews.json', 
+      $.ajax '/api/users/9/reviews.json', #FIX THIS PART!!!!
         type: 'POST',
         dataType: 'text',
         data: { "review": { 
@@ -73,10 +73,10 @@ $ ->
       type: 'POST',
       dataType: 'text',
       data: { "relationships": { 
-          "follower_id": 8, 
+          "follower_id": 8, #FIX THIS PART!!!
           "followed_id": id }},
       success: (data) ->
-        #showPage '/api/users/'+id, bites.usersTemplate
+        showPage "/api/users/#{id}", bites.userTemplate
 
 
   # $.ajax '/api/users', 

@@ -6,7 +6,11 @@ class RelationshipsController < ApplicationController
   end
 
   def create
-  	relationship = Relationship.new(followed_id: :followed_id)
+    @user = User.find_by(id: params[:relationships][:follower_id])
+    @relationships = Relationship.all
+
+    # NEED TO ADD ERROR MESSAGE FUNCTION IF UNIQUENESS FAILS
+  	relationship = @user.relationships.create(followed_id: params[:relationships][:followed_id])
 
     if relationship.save
       head :created
@@ -24,7 +28,7 @@ class RelationshipsController < ApplicationController
   private
 
   def relationship_params
-    params.require(:relationship).permit(
+    params.require(:relationships).permit(
       :follower_id,
       :followed_id
     )
