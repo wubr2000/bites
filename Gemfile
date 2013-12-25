@@ -12,3 +12,6 @@ gem 'puma'
 gem 'rabl'
 gem 'oj'
 gem 'gon'
+
+gem "rails_12factor", group: :production
+ruby "2.0.0"
